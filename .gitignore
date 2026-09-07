@@ -1,0 +1,7 @@
+data/*
+!data/.gitkeep
+!data/dbsmorf_hmp_gut_clean.fasta
+!data/dbsmorf_hmp_gut_clean.tsv
+__pycache__/
+*.pyc
+.DS_Store
