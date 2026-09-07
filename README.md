@@ -14,7 +14,7 @@ transcription factor and conferring HLB resistance.
 
 | # | Stage | Tool | Status |
 |---|-------|------|--------|
-| 1 | Collect human gut microbiome sORFs | [DBsmORF](http://104.154.134.205:3838/DBsmORF/) | done (manual download) |
+| 1 | Collect and annotate human gut microbiome sORFs | [DBsmORF](http://104.154.134.205:3838/DBsmORF/) | done (manual download) |
 | 2 | Remove duplicates / non-standard AA sequences | `scripts/01_filter_dbsmorf.py` | done |
 | 3 | Classify antimicrobial peptides | [AMPDiscover](https://biocom-ampdiscover.cicese.mx/) | TODO |
 | 4 | Deduplicate at 50% identity / 80% coverage | [MMseqs2](https://github.com/soedinglab/mmseqs2) | TODO |
