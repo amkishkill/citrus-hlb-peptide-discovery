@@ -120,10 +120,7 @@ def main() -> None:
     filtered = merged[final_mask].copy()
     filtered.to_csv(out_path, index=False)
     print(f"\nWrote {len(filtered)} predicted-AMP rows to {out_path}")
-    print(
-        "\nFor reference, the paper reports 40,837 AMPs identified from "
-        "122,826 sORFs at this stage."
-    )
+
 
 
 if __name__ == "__main__":
