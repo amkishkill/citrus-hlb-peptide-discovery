@@ -17,7 +17,7 @@ transcription factor and conferring HLB resistance.
 | 1 | Collect + annotate human gut microbiome sORFs | [DBsmORF](http://104.154.134.205:3838/DBsmORF/) ([SmORFinder](https://github.com/bhattlab/SmORFinder) backend, default significance filters) | done (manual download) |
 | 2 | Remove duplicates / non-standard AA sequences | `scripts/01_filter_dbsmorf.py` | done — 122,826 sequences, exact match to paper |
 | 3 | Classify antimicrobial peptides | [AMPDiscover](https://biocom-ampdiscover.cicese.mx) (web only, `ProtDCal-AMP_RF` general model) | done — 33,491 AMPs (paper: 40,837; see note below) |
-| 4 | Deduplicate at 50% identity / 80% coverage | MMseqs2 (`scripts/05_run_mmseqs_cluster.sh`) | in progress |
+| 4 | Deduplicate at 50% identity / 80% coverage | MMseqs2 (`scripts/05_run_mmseqs_cluster.sh`) | done -  12,951 AMPs (paper: 14,950)|
 | 5 | Homology search | BLAST | TODO |
 | 6 | Structure prediction (peptides + PUB21) | Modeller | TODO |
 | 7 | Peptide-protein docking vs PUB21 | AutoDock Vina (paper) / peptide-aware alternatives | TODO |
