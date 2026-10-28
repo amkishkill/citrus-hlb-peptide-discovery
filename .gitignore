@@ -2,6 +2,7 @@ data/*
 !data/.gitkeep
 !data/dbsmorf_hmp_gut_clean.fasta
 !data/dbsmorf_hmp_gut_clean.tsv
+!data/mmseqs_out_rep_seq.fasta
 __pycache__/
 *.pyc
 .DS_Store
