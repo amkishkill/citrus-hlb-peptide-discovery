@@ -1,8 +1,12 @@
-data/*
+data/ampdiscover_batches/*
+data/ampdiscover_results/*
+data/mmseqs_tmp/*
 !data/.gitkeep
-!data/dbsmorf_hmp_gut_clean.fasta
-!data/dbsmorf_hmp_gut_clean.tsv
-!data/mmseqs_out_rep_seq.fasta
+data/ampdiscover_merged.csv
+data/dbsmorf_amps.fasta
+data/dbsmorf_hmp_gut_raw.tsv
+data/mmseqs_out_all_seqs.fasta
+data/mmseqs_out_cluster.tsv
 __pycache__/
 *.pyc
 .DS_Store
