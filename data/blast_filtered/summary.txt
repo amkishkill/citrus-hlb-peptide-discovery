@@ -1,0 +1,11 @@
+Query peptides:                         12951
+Raw hits:                               276721
+Sequence thresholds: identity >= 40.0%, query coverage >= 50.0%
+  Hits passing:                         67577
+  Peptides with >=1 hit:                10357 (80.0%)
+Experimental filter: method = any; resolution <= 2.5 A where a resolution exists; entries without one kept
+  Hits dropped (PDB ID unknown to RCSB):   142
+  Hits after method filter:             67435
+  Hits passing all filters:             22330
+  Peptides with >=1 template:           7064 (54.5%)
+  Peptides with no template:            5887

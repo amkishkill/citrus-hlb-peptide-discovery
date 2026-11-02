@@ -134,6 +134,53 @@ This produces `data/mmseqs_out_rep_seq.fasta` (one representative sequence
 per cluster) and `data/mmseqs_out_cluster.tsv` (cluster membership). For
 reference, the paper reports **14,950 representative AMPs** at this stage.
 
+## Step 5: Template search (BLAST vs. PDB)
+The goal is to find homologous sequences with a solved 3D structure in the PDB for as many of the representative AMPs we obtained after step 4 to use as templates for homology modelling with MOdeller.
+
+### Scripts
+| Script | Purpose |
+|---|---|
+| `scripts/06_setup_blast_db.sh` | Download/build the PDB protein BLAST database |
+| `scripts/07_run_blast_templates.sh` | Batch `blastp` of all peptides, chunked and resumable |
+| `scripts/08_filter_blast_hits.py` | Filter hits by identity/coverage, rank templates, list peptides without a template |
+
+### Usage
+```bash
+# 1. database (default: NCBI pdbaa, non-redundant)
+bash scripts/06_setup_blast_db.sh pdbaa data/blastdb
+
+# 2. batch search (use the representative-sequence FASTA from step 4)
+THREADS=6 bash scripts/07_run_blast_templates.sh \
+    data/mmseqs_out/<representative_seqs>.fasta \
+    data/blastdb/pdbaa \
+    data/blast_out
+
+# 3. filter
+python scripts/08_filter_blast_hits.py \
+    --hits data/blast_out/all_hits.tsv \
+    --queries data/mmseqs_out/<representative_seqs>.fasta \
+    --out-dir data/blast_filtered \
+    --min-identity 40 --min-qcov 70 \
+    --method any --max-resolution 2.5
+```
+
+### REasoning for parameter choice
+| Setting | Value | Why |
+|---|---|---|
+| `-task` | `blastp-short` | Tuned for queries < ~30 aa (PAM30 matrix, small word size) |
+| `-evalue` | `1000` | E-values for short peptides are rarely significant; filter by identity/coverage afterwards instead |
+| `-seg no -soft_masking false` | | No low-complexity masking (as in the paper); masking would remove much of a short peptide |
+| `-comp_based_stats` | `0` | Compositional adjustment is unreliable for very short sequences |
+| `-max_target_seqs` | `20` | Several candidate templates per peptide (the paper's `1` is not suitable for template selection, and can miss the true best hit) |
+| Identity / query coverage | `>= 40%` / `>= 70%` | Starting point; inspect the distributions and adjust |
+
+### Outputs (all under `data/`)
+
+- `blast_out/all_hits.tsv`: raw outfmt-6 hits
+- `blast_filtered/templates_best.tsv`: top templates per peptide (PDB ID, chain, identity, coverage)
+- `blast_filtered/peptides_no_template.txt`: peptides needing another approach
+
+
 ## Notes / gaps vs. the original paper
 
 The paper's Methods and SI do not disclose several implementation

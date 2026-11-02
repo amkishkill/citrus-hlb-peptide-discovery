@@ -1,6 +1,7 @@
 data/ampdiscover_batches/*
 data/ampdiscover_results/*
 data/mmseqs_tmp/*
+data/blastdb/*
 !data/.gitkeep
 data/ampdiscover_merged.csv
 data/dbsmorf_amps.fasta
