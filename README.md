@@ -164,7 +164,7 @@ python scripts/08_filter_blast_hits.py \
     --method any --max-resolution 2.5
 ```
 
-### REasoning for parameter choice
+### Reasoning for parameter choice
 | Setting | Value | Why |
 |---|---|---|
 | `-task` | `blastp-short` | Tuned for queries < ~30 aa (PAM30 matrix, small word size) |
