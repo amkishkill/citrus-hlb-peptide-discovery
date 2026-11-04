@@ -18,7 +18,7 @@ transcription factor and conferring HLB resistance.
 | 2 | Remove duplicates / non-standard AA sequences | `scripts/01_filter_dbsmorf.py` | done — 122,826 sequences, exact match to paper |
 | 3 | Classify antimicrobial peptides | [AMPDiscover](https://biocom-ampdiscover.cicese.mx) (web only, `ProtDCal-AMP_RF` general model) | done — 33,491 AMPs (paper: 40,837; see note below) |
 | 4 | Deduplicate at 50% identity / 80% coverage | MMseqs2 (`scripts/05_run_mmseqs_cluster.sh`) | done -  12,951 AMPs (paper: 14,950)|
-| 5 | Homology search | BLAST | TODO |
+| 5 | Homology search | BLAST | done - 6936 peptides with viable templates (paper: 6937) |
 | 6 | Structure prediction (peptides + PUB21) | Modeller | TODO |
 | 7 | Peptide-protein docking vs PUB21 | AutoDock Vina (paper) / peptide-aware alternatives | TODO |
 
@@ -162,6 +162,9 @@ python scripts/08_filter_blast_hits.py \
     --out-dir data/blast_filtered \
     --min-identity 40 --min-qcov 70 \
     --method any --max-resolution 2.5
+
+# 4. select and download templates
+python scripts/10_select_templates.py --structures download
 ```
 
 ### Reasoning for parameter choice
@@ -172,13 +175,22 @@ python scripts/08_filter_blast_hits.py \
 | `-seg no -soft_masking false` | | No low-complexity masking (as in the paper); masking would remove much of a short peptide |
 | `-comp_based_stats` | `0` | Compositional adjustment is unreliable for very short sequences |
 | `-max_target_seqs` | `20` | Several candidate templates per peptide (the paper's `1` is not suitable for template selection, and can miss the true best hit) |
-| Identity / query coverage | `>= 40%` / `>= 70%` | Starting point; inspect the distributions and adjust |
+| Identity / query coverage | `>= 45%` / `>= 50%` | Starting point; inspect the distributions and adjust |
 
 ### Outputs (all under `data/`)
+| File | Content |
+|---|---|
+| `blast_out/all_hits.tsv` | raw outfmt-6 hits |
+| `blast_filtered/templates_best.tsv` | top templates per peptide (PDB ID, chain, identity, coverage) |
+| `blast_filtered/peptides_no_template.txt` | peptides needing another approach |
+| `modeller/targets.fasta` | sequences of the peptides that got a template |
+| `modeller/targets.ali` | the same sequences in Modeller's PIR format |
+| `modeller/selected_templates.tsv` | **job list**: one row per peptide with `template_code` (e.g. `1abcA`), `pdb_id`, `chain`, `template_file`, identity/coverage, aligned ranges, `rank_used` |
+| `modeller/candidates_ranked.tsv` | every candidate with its rank |
+| `modeller/pdb_ids.txt` | unique PDB IDs needed |
+| `modeller/no_template.tsv` | peptides left without a template, with the reason |
+| `modeller/templates/<pdbid>.pdb` | one structure file per PDB entry (only with `--structures local/download`) |
 
-- `blast_out/all_hits.tsv`: raw outfmt-6 hits
-- `blast_filtered/templates_best.tsv`: top templates per peptide (PDB ID, chain, identity, coverage)
-- `blast_filtered/peptides_no_template.txt`: peptides needing another approach
 
 
 ## Notes / gaps vs. the original paper

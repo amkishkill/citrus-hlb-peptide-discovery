@@ -8,6 +8,8 @@ data/dbsmorf_amps.fasta
 data/dbsmorf_hmp_gut_raw.tsv
 data/mmseqs_out_all_seqs.fasta
 data/mmseqs_out_cluster.tsv
+data/modeller/*
+data/blast_out/*
 __pycache__/
 *.pyc
 .DS_Store

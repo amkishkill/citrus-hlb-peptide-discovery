@@ -1,0 +1,23 @@
+name	peptide_id	active_in_paper	sequence_source	length	sequence	match_type	match_identity	family_size	matched_id	represented_by	best_template	last_stage_reached
+APP1	LBBUAG_103173	no	clean TSV (via ORF ID)	34	MTKIDRANFGSKLGVILASAGSAVGLGKHLEISL	exact	1.0	1	smorf_83639		4US3_A (X-ray, 2.10 A, 76% id, 50% cov)	final template
+APP2	VNLJVH_73940	no	clean TSV (via ORF ID)	35	MSEIESKVKAIIVDKLGVDEAEVVGPSKFHKRFRC	exact	1.0	1	smorf_19966			clean sORFs
+APP3	QYMFSE_35673	yes	patent description text, SEQ ID No. 4 (AMP 3); provided by user, patent number not recorded	28	MKKVKNIFHKIANADPMIWGYVMLSESK	family	0.929	10 sequences / 10 sORFs	smorf_176794	smorf_2734	7LQM_A (X-ray, 2.30 A, 56% id, 67% cov)	final template (via representative smorf_2734)
+APP4	NCOYWW_169977	no	clean TSV (via ORF ID)	39	MTVKKGDKVITGKFAGQELKLDGEDYVICKLADILAIVD	exact	1.0	1	smorf_148535			clean sORFs
+APP5	GFCDWA_231836	no	clean TSV (via ORF ID)	36	MKNFKKIISLVLAVCLMASRAIAYRTGERASVPLKF	exact	1.0	1	smorf_123243		7LSA_A (X-ray, 1.76 A, 61% id, 50% cov)	final template
+APP6	NJYHFZ_170965	no	raw TSV (via ORF ID)	37	MISTDLKECYEFLGEIIGKTYKDDIIDRLFQDFCVGK	exact	1.0	1	smorf_89639			clean sORFs
+APP7	XPFSLP_86513	no	clean TSV (via ORF ID)	38	MIGEISGMLNDIKPVKTIIEDIVSGLPGVIQTIENDCK	exact	1.0	1	smorf_210306			clean sORFs
+APP8	XVOCUO_150422	no	clean TSV (via ORF ID)	36	MANYVFGIDVGGTSVKCGLFQTDGTLLEKWEIPTRT	exact	1.0	1	smorf_16528		2QM1_A (X-ray, 2.02 A, 48% id, 78% cov)	final template
+APP9	HGCRCD_40783	yes	patent description text, SEQ ID No. 3 (APP 9); provided by user, patent number not recorded	30	MKKVKNIFHKIANADPMIWGYVMLNDRLSK	family	0.9	10 sequences / 10 sORFs	smorf_71910	smorf_2734	7LQM_A (X-ray, 2.30 A, 56% id, 67% cov)	final template (via representative smorf_2734)
+APP10	CZCLBL_46867	no	clean TSV (via ORF ID)	36	MKEVIHTSNAPAAIGPYSQAIKAGGVPEEPFVLWKV	exact	1.0	1	smorf_407146			clean sORFs
+APP11	EPGFKU_60425	no	clean TSV (via ORF ID)	40	MEFSSIFETIKGFFEANVLPTLKPIIDAIMDLIGGIIGGK	exact	1.0	1	smorf_321872	smorf_107548	7T63_A (X-ray, 2.00 A, 55% id, 50% cov)	final template (via representative smorf_107548)
+APP12	CDWDUZ_89601	no	clean TSV (via ORF ID)	39	MYSISIALGVNSIALGDNSKAYGDNSKGYGDRIDAYKKV	exact	1.0	1	smorf_136489			clean sORFs
+APP13	CPUYZI_150467	no	clean TSV (via ORF ID)	44	MHKYINEQIQEEDTAQDIIDKFTFAGESTSAKYSIDKELGGRIN	exact	1.0	1	smorf_243726			clean sORFs
+APP14	RCDHJQ_47762	no	clean TSV (via ORF ID)	42	MMCITAKEPNMYDLMRKLPIGIQTFEDIRRKNYLYVDKTALV	exact	1.0	1	smorf_132389			clean sORFs
+APP15	OKSFPA_157598	no	raw TSV (via ORF ID)	43	MEEKAEYLGANAIIGLKISYDNLGGTMGNTILVTAYGTAIKYE	exact	1.0	1	smorf_180172			clean sORFs
+APP16	UTBIDH_87961	no	clean TSV (via ORF ID)	39	MEKRIIPISRELAEKEPCVIVGRCADFILAASPLIRTSR	exact	1.0	1	smorf_178177			clean sORFs
+APP17	JCGWKW_183486	yes	raw TSV (via ORF ID)	36	MKKQIISTKNAPSAVGPYVQGIKAGNTVLCIGPAWH	exact	1.0	1	smorf_221399		3K0T_A (X-ray, 2.10 A, 62% id, 72% cov)	final template
+APP18	HUPCUU_22270	no	clean TSV (via ORF ID)	37	MGKLDNKVAIITGGNAGVGKEIAKLFASEGAKVVISA	exact	1.0	1	smorf_408926		6ZZQ_A (X-ray, 1.93 A, 70% id, 97% cov)	final template
+APP19	LRQQPD_85619	no	clean TSV (via ORF ID)	39	MNLMGMNVGPLRMPLCEMEEDTKAALAKEIEKFGLKLAK	exact	1.0	1	smorf_170089		3A5F_A (X-ray, 1.19 A, 71% id, 54% cov)	final template
+APP20	FZLXJR_36596	no	clean TSV (via ORF ID)	35	MKIGLGFEGGIAVVILAIILDRITQGMAGRKNKKG	exact	1.0	1	smorf_324184			identity/coverage
+APP21	XBTSPW_106947	no	clean TSV (via ORF ID)	44	MTITVEPGIYIEGLGGVRIEDCCIMTEDGYINPVTSPKELIIIE	exact	1.0	1	smorf_55602			clean sORFs
+APP22	ELVHXQ_110688	no	clean TSV (via ORF ID)	42	MLPKVQAAVSFAESKPGRTALITLLEKAKDGIAGKTGTAVHM	exact	1.0	1	smorf_250243		1B7B_A (X-ray, 2.80 A, 58% id, 62% cov)	final template
